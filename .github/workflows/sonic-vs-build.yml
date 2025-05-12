@@ -1,4 +1,4 @@
-name: 202411-vs-build
+name: master-vs-build
 
 on:
   push:

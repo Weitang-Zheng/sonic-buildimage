@@ -22,7 +22,7 @@ jobs:
 
     - name: build
       run: |
-          cd 202411_${{github.run_number}}
+          cd master_${{github.run_number}}
           make init
           make configure PLATFORM=vs
           make SONIC_BUILD_JOBS=8 target/sonic-vs.img.gz 
@@ -30,7 +30,7 @@ jobs:
     - name: 'Upload Artifact'
       uses: actions/upload-artifact@v4
       with:
-        name: otn-202411-artifact
+        name: otn-master-artifact
         path: |
-          202411_${{github.run_number}}/sonic-installer.img
-          202411_${{github.run_number}}/target/*.img.gz
+          master_${{github.run_number}}/sonic-installer.img
+          master_${{github.run_number}}/target/*.img.gz
